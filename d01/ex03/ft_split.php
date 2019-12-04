@@ -1,5 +1,4 @@
 <?php
-
 	function ft_split($string)
 	{
 		$test = explode(" ", $string);
