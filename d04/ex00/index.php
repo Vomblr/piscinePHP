@@ -13,5 +13,5 @@
 		<br/>
 		Password: <input type = "password" name = "passwd" value = "<?php echo $_SESSION['passwd']; ?>" />
 		<input type = "submit" name = "submit" value = "OK" />
-		</form>
-		</body></html>
+	</form>
+</body></html>
