@@ -17,7 +17,7 @@
 			if ($_POST['msg'])
 			{
 				$tmp['login'] = $_SESSION["loggued_on_user"];
-				$tmp['date'] = date('H:i');
+				$tmp['time'] = time();
 				$tmp['msg'] = $_POST['msg'];
 				$db[$i] = $tmp;
 			}

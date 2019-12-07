@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	date_default_timezone_set('Europe/Moscow');
 	if ($_SESSION["loggued_on_user"] && $_SESSION["loggued_on_user"] !== "")
 	{
 		if (!file_exists('../private'))
@@ -10,7 +11,7 @@
 		$i = 0;
 		while ($db[$i])
 		{
-			echo "[" . $db[$i]['date'] . "] " . "<b>" . $db[$i]['login'] ."</b>" .": ";
+			echo "[" . date('H:i', $db[$i]['time']) . "] " . "<b>" . $db[$i]['login'] ."</b>" .": ";
 			echo $db[$i]['msg'];
 			echo "<br />"."\n";
 			$i++;
