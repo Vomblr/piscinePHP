@@ -1,0 +1,17 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles space 3D vertex.
+
+An instance can be contructed with an array with this private attributes :
+- 'x'
+- 'y'
+- 'z'
+- 'w' (homogenous parameter, optionnal, 1.0 by default)
+- 'color' (instance of Color class (optionnal))
+
+Each of this vars have getters and setters like this :
+Vertex->getX();
+Vertex->setX($value);
+
+You can enable verbose mode with the static var Vertex::$verbose = True.
+---------------------------------------------------------------------- Vertex ->
