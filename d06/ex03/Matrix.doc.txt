@@ -1,0 +1,32 @@
+
+<- Matrix ----------------------------------------------------------------------
+The Matrix class handles 4x4 Matrixs.
+
+it's got a finite constants values for the preset :
+IDENTITY    = 'IDENTITY',
+SCALE       = 'SCALE',
+RX          = 'Ox ROTATION',
+RY          = 'Oy ROTATION',
+RZ          = 'Oz ROTATION',
+TRANSLATION = 'TRANSLATION',
+PROJECTION  = 'PROJECTION';
+
+On wich depends the following arguments respectivly :
+IDENTITY    ->nothing
+SCALE       -> the scale
+RX          -> angle of rotation
+RY          -> angle of rotation
+RZ          -> angle of rotation
+TRANSLATION -> vector ( class Vector ) of the translation
+PROJECTION  -> Field of view ( in degrees ), Ratio (width/height of screen), near and far z distances
+
+The following method are providing for this Class:
+
+- mult() : return a new matrix corresponding to the multiplication of the instance by the argument;
+
+- transformVertex() : return a new Vertex corresponding to the matrix apply to the one sent in argument;
+
+There are no setters, so you won't be able to change Matrix's values after creation.
+
+You can enable verbose mode with the static var Vertex::$verbose = True.
+---------------------------------------------------------------------- Matrix ->
