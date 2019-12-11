@@ -2,7 +2,7 @@
 <- Matrix ----------------------------------------------------------------------
 The Matrix class handles 4x4 Matrixs.
 
-it's got a finite constants values for the preset :
+It's got a finite constants values for the preset :
 IDENTITY    = 'IDENTITY',
 SCALE       = 'SCALE',
 RX          = 'Ox ROTATION',
@@ -12,7 +12,7 @@ TRANSLATION = 'TRANSLATION',
 PROJECTION  = 'PROJECTION';
 
 On wich depends the following arguments respectivly :
-IDENTITY    ->nothing
+IDENTITY    -> nothing
 SCALE       -> the scale
 RX          -> angle of rotation
 RY          -> angle of rotation

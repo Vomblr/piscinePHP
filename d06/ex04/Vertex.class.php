@@ -85,5 +85,10 @@
 		{
 			$this->_color = $color;
 		}
+
+		public function opposite()
+		{
+			return new Vector(array('dest' => new Vertex(array('x' => $this->_x * -1, 'y' => $this->_y * -1, 'z' => $this->_z * -1))));
+		}
 	}
 ?>
