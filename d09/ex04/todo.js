@@ -1,5 +1,4 @@
-//var id = Math.floor(Math.random() * Math.floor(2147483648));
-var id = 0;
+var id = 1;
 
 $.ajax(
 	{
@@ -14,12 +13,10 @@ $.ajax(
 				{
 					var tmp = tab[i].split(';');
 					addtoCSV(tmp[1]);
-					id = Number(tmp[0]);
-					console.log(tmp[0]);
+					if (i == tab.length - 2)
+						id = (parseInt(tmp[0]) + 1);
 				}
 			}
-			//id = Number(tmp[0]);
-			console.log(id);
 		}
 	})
 
@@ -41,7 +38,6 @@ $.ajax(
 				url: "insert.php?" + id + "=" + todo
 			});
 			id++;
-			//id = Math.floor(Math.random() * Math.floor(2147483648));
 		}
 
 	})
