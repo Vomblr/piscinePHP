@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Awesome JQuery calc
+		</title>
+	</head>
+		<body>
+			<input type="text" id = "nb1">
+			<select id = "operators">
+				<option>+</option>
+				<option>-</option>
+				<option>*</option>
+				<option>/</option>
+				<option>%</option>
+			</select>
+			<input type="text" id="nb2">
+			<input type="submit" id="submit" value="Try me!">
+			<script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+			<script>
+				setInterval(function(){ alert("Please, use me..."); }, 30000);
+			</script>
+			<script>
+
+				function isValid(num)
+				{
+					return (parseInt(num, 10) == num);
+				}
+
+				function printLog(msg)
+				{
+					console.log(msg);
+					alert(msg);
+				}
+
+				$("#submit").click(function()
+				{
+					var nb1 = $("#nb1").val();
+					var nb2 = $("#nb2").val();
+					var operators = $("#operators").val();
+					if (isValid(nb1) && isValid(nb2) && nb1 >= 0 && nb2 >= 0)
+					{
+						if (operators == '+')
+							printLog(nb1 + nb2);
+						else if (operators == '-')
+							printLog(nb1 - nb2);
+						else if (operators == '*')
+							printLog(nb1 * nb2);
+						else if (operators == '/')
+						{
+							if (nb2 == 0) {
+								printLog("It’s over 9000!");
+						}
+						else
+							printLog(nb1 / nb2);
+					}
+					else if (operators == '%')
+					{
+						if (nb2 == 0)
+							printLog("It’s over 9000!");
+						else
+							printLog(nb1 % nb2);
+					}
+					}
+					else
+						alert("Error :(");
+				})
+			</script>
+		</body>
+</html>

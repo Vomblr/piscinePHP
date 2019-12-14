@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="UTF-8">
+	<head>
+	<title>BalloonJS</title>
+	<style>
+		#balloon {
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			border-radius: 50%;
+			margin: auto;
+		}
+	</style>
+	</head>
+	<body>
+	<div id="balloon"></div>
+	<script>
+		var	colors = new Array('red', 'green', 'blue');
+		var i = 0;
+		baloon = document.getElementById('balloon');
+		baloon.onclick = custom;
+		baloon.onmouseleave = reverse;
+
+		function custom()
+		{
+			change_color();
+			change_size();
+		}
+		function change_size()
+		{
+			var width = parseInt(baloon.clientWidth, 10);
+			var height = parseInt(baloon.clientHeight, 10);
+			width += 10;
+			height += 10;
+			if (width > 420)
+			{
+					width = 200;
+					height = 200;
+			}
+			baloon.style.width = width + 'px';
+			baloon.style.height = height + 'px';
+		}
+
+		function change_color()
+		{
+			i++;
+			if (i > 2)
+				i = 0;
+			baloon.style.backgroundColor = colors[i];
+		}
+
+		function reverse()
+		{
+			var width = parseInt(baloon.clientWidth, 10);
+			var height = parseInt(baloon.clientHeight, 10);
+			if (width > 200)
+			{
+				width -= 5;
+				height -= 5;
+			}
+			baloon.style.width = width + 'px';
+			baloon.style.height = height + 'px';
+			i--;
+			if (i < 0)
+				i = 2;
+			baloon.style.backgroundColor = colors[i];
+		}
+	</script>
+	</body>
+</html>

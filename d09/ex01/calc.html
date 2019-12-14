@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Awesome calc
+		</title>
+	</head>
+		<body>
+			<input type="text" id = "nb1">
+			<select id = "operators">
+				<option>+</option>
+				<option>-</option>
+				<option>*</option>
+				<option>/</option>
+				<option>%</option>
+			</select>
+			<input type="text" id="nb2">
+			<input type="submit" value="Try me!" onclick="do_op()">
+			<script>
+				setInterval(function(){ alert("Please, use me..."); }, 30000);
+			</script>
+			<script>
+
+				function isValid(num)
+				{
+					return (parseInt(num, 10) == num);
+				}
+
+				function do_op()
+				{
+					var index = document.getElementById("operators").selectedIndex;
+					var options = document.getElementById("operators").options;
+					var op = options[index].text;
+					var res;
+					var nb1 = document.getElementById("nb1").value;
+					var nb2 = document.getElementById("nb2").value;
+
+					if (!nb1 || !nb2 || !isValid(nb1) || !isValid(nb2))
+					{
+						alert ("Error :(");
+						return 0;
+					}
+					nb1 = parseInt(nb1);
+					nb2 = parseInt(nb2);
+					if (op == "+")
+						res = nb1 + nb2;
+					if (op == "-")
+						res = nb1 - nb2;
+					if (op == "*")
+						res = nb1 * nb2;
+					if (op == "/")
+					{
+						if (nb2 == 0)
+							res = "It's over 9000!";
+						else
+							res = nb1 / nb2;
+					}
+					if (op == "%")
+					{
+						if (nb2 == 0)
+							res = "It's over 9000!";
+						else
+							res = nb1 % nb2;
+					}
+					alert(res);
+					console.log(res);
+				}
+			</script>
+		</body>
+</html>
